@@ -1,0 +1,223 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); color: var(--color-text-primary); }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 0.5px solid var(--color-border-tertiary); position: sticky; top: 0; background: var(--color-background-primary); z-index: 10; }
+.nav-name { font-size: 15px; font-weight: 500; }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: 13px; color: var(--color-text-secondary); text-decoration: none; cursor: pointer; }
+.nav-links a:hover { color: var(--color-text-primary); }
+.section { padding: 3rem 2rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.hero { padding: 4rem 2rem 3rem; background: var(--color-background-secondary); }
+.hero-tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: var(--border-radius-md); background: #EEEDFE; color: #3C3489; margin-bottom: 1rem; }
+.hero-name { font-size: 32px; font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.hero-title { font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+.hero-headline { font-size: 20px; font-weight: 500; line-height: 1.4; max-width: 520px; margin-bottom: 1rem; }
+.hero-sub { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; max-width: 480px; margin-bottom: 2rem; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { font-size: 13px; font-weight: 500; padding: 8px 20px; border-radius: var(--border-radius-md); background: #534AB7; color: #EEEDFE; border: none; cursor: pointer; }
+.btn-secondary { font-size: 13px; padding: 8px 20px; border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); border: 0.5px solid var(--color-border-primary); cursor: pointer; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 2rem; }
+.stat-card { background: var(--color-background-primary); border-radius: var(--border-radius-md); padding: 1rem; border: 0.5px solid var(--color-border-tertiary); }
+.stat-num { font-size: 22px; font-weight: 500; color: #534AB7; }
+.stat-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+.section-label { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+.section-title { font-size: 20px; font-weight: 500; margin-bottom: 1.5rem; }
+.expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.expertise-card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.25rem; border: 0.5px solid var(--color-border-tertiary); }
+.expertise-icon { font-size: 20px; color: #534AB7; margin-bottom: 0.75rem; }
+.expertise-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.expertise-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+.timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+.job { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; }
+.job-date { font-size: 12px; color: var(--color-text-tertiary); padding-top: 2px; }
+.job-content { border-left: 2px solid #AFA9EC; padding-left: 1.25rem; }
+.job-company { font-size: 12px; color: #534AB7; font-weight: 500; margin-bottom: 2px; }
+.job-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.job-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.highlight-badge { display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); background: #E1F5EE; color: #0F6E56; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); color: var(--color-text-secondary); }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.contact-card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; border: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 12px; }
+.contact-icon { font-size: 20px; color: #534AB7; }
+.contact-label { font-size: 11px; color: var(--color-text-tertiary); }
+.contact-val { font-size: 13px; font-weight: 500; }
+.footer { padding: 1.5rem 2rem; text-align: center; font-size: 12px; color: var(--color-text-tertiary); }
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Shreya Jain — B2B GTM & Marketing Leader portfolio website</h2>
+
+<nav class="nav">
+  <span class="nav-name">Shreya Jain</span>
+  <div class="nav-links">
+    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
+    <a onclick="document.getElementById('expertise').scrollIntoView({behavior:'smooth'})">Expertise</a>
+    <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
+    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+  </div>
+</nav>
+
+<div class="hero" id="about">
+  <div class="hero-tag">Open to opportunities</div>
+  <div class="hero-name">Shreya Jain</div>
+  <div class="hero-title">GTM Growth · AI-Powered B2B Lead Generation · Pipeline Strategy</div>
+  <div class="hero-headline">I help B2B SaaS companies build pipeline with strategy + behaviour</div>
+  <div class="hero-sub">Where behaviour science meets GTM strategy — turning attention into qualified pipeline. 10+ years across product, content, and enterprise marketing.</div>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</button>
+    <button class="btn-secondary" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">View experience</button>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">₹5M+</div><div class="stat-label">MRR pipeline in 3 months</div></div>
+    <div class="stat-card"><div class="stat-num">200%</div><div class="stat-label">Content impression uplift</div></div>
+    <div class="stat-card"><div class="stat-num">208%</div><div class="stat-label">LinkedIn engagement growth</div></div>
+    <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Years of experience</div></div>
+  </div>
+</div>
+
+<div class="section" id="expertise">
+  <div class="section-label">What I do</div>
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
+      <div class="expertise-title">GTM Strategy</div>
+      <div class="expertise-desc">Enterprise go-to-market across insurance, fintech, AI, and compliance verticals</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-chart-arrows" aria-hidden="true"></i></div>
+      <div class="expertise-title">Pipeline generation</div>
+      <div class="expertise-desc">ABM, outbound, and multi-channel demand gen across India, USA, SEA, and MENA</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-writing" aria-hidden="true"></i></div>
+      <div class="expertise-title">Content & messaging</div>
+      <div class="expertise-desc">Positioning, messaging architecture, thought leadership, and content systems</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-settings-automation" aria-hidden="true"></i></div>
+      <div class="expertise-title">Marketing ops</div>
+      <div class="expertise-desc">HubSpot, Clay, n8n, Smartlead — workflow automation and scalable GTM execution</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-brain" aria-hidden="true"></i></div>
+      <div class="expertise-title">Behavioural GTM</div>
+      <div class="expertise-desc">Buyer psychology applied to positioning, messaging, and sales conversations</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-icon"><i class="ti ti-device-desktop" aria-hidden="true"></i></div>
+      <div class="expertise-title">Website strategy</div>
+      <div class="expertise-desc">Conversion-focused copy, information architecture, and digital brand presence</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="experience">
+  <div class="section-label">Career</div>
+  <div class="timeline">
+
+    <div class="job">
+      <div class="job-date">Dec 2025 – Present</div>
+      <div class="job-content">
+        <div class="job-company">Predoole Analytics</div>
+        <div class="job-title">Head of Marketing</div>
+        <div class="job-desc">Enterprise GTM across regulatory reporting, insurance intelligence, and AI-powered spend visibility. Driving ABM campaigns, strategic sales conversations, executive roundtables, and outbound.</div>
+        <span class="highlight-badge">₹5M+ MRR pipeline in 3 months</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">Nov 2024 – Dec 2025</div>
+      <div class="job-content">
+        <div class="job-company">Pixelo Digital</div>
+        <div class="job-title">Head of Marketing</div>
+        <div class="job-desc">Led GTM strategy and demand generation for global B2B SaaS clients across Insurance, AI, IoT, Cybersecurity, and Financial Services. Built inbound, outbound, and ABM programs across four international markets.</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">Oct 2023 – Nov 2024</div>
+      <div class="job-content">
+        <div class="job-company">TranZact</div>
+        <div class="job-title">Content Strategist</div>
+        <div class="job-desc">Built brand identity, content systems, and omnichannel editorial strategy. Drove SEO, influencer, and LinkedIn thought leadership programs for a B2B SaaS platform for manufacturers.</div>
+        <span class="highlight-badge">+208% LinkedIn engagement vs competitors</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">May 2021 – Apr 2024</div>
+      <div class="job-content">
+        <div class="job-company">Freelance</div>
+        <div class="job-title">Marketing Consultant</div>
+        <div class="job-desc">Worked with startups on brand communication, conversion-focused websites, and digital customer experience across Shopify and WordPress. Industries: lifestyle, wellness, retail, and services.</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-date">Dec 2015 – Aug 2019</div>
+      <div class="job-content">
+        <div class="job-company">H&M</div>
+        <div class="job-title">Product Developer</div>
+        <div class="job-desc">Managed strategic supplier relationships across India for menswear, womenswear, and kidswear categories. Led commercial negotiations with manufacturer CXOs and drove product capability expansion.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Skills & tools</div>
+  <div class="skills-grid">
+    <span class="skill-tag">GTM strategy</span>
+    <span class="skill-tag">ABM</span>
+    <span class="skill-tag">B2B SaaS</span>
+    <span class="skill-tag">Lead generation</span>
+    <span class="skill-tag">Content strategy</span>
+    <span class="skill-tag">SEO</span>
+    <span class="skill-tag">HubSpot</span>
+    <span class="skill-tag">Clay</span>
+    <span class="skill-tag">n8n</span>
+    <span class="skill-tag">Smartlead</span>
+    <span class="skill-tag">LinkedIn Sales Navigator</span>
+    <span class="skill-tag">Semrush</span>
+    <span class="skill-tag">GA4</span>
+    <span class="skill-tag">WordPress</span>
+    <span class="skill-tag">Outbound marketing</span>
+    <span class="skill-tag">Brand positioning</span>
+    <span class="skill-tag">Messaging frameworks</span>
+    <span class="skill-tag">Sales operations</span>
+    <span class="skill-tag">Behavioural GTM</span>
+    <span class="skill-tag">Demand generation</span>
+  </div>
+</div>
+
+<div class="section" id="contact">
+  <div class="section-label">Get in touch</div>
+  <div class="section-title">Let's build pipeline together</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <i class="ti ti-brand-linkedin contact-icon" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val">linkedin.com/in/helloshreya</div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <i class="ti ti-map-pin contact-icon" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">Location</div>
+        <div class="contact-val">Pune, Maharashtra, India</div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val">Available on LinkedIn</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">© 2026 Shreya Jain · GTM Growth · Pune, India</div>
