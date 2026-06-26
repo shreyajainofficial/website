@@ -233,6 +233,53 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
 @media (max-width: 500px) {
   .expertise-grid { grid-template-columns: 1fr; }
 }
+
+.case-link { font-size: 0.85rem; font-weight: 500; color: var(--gold); text-decoration: none; margin-top: auto; }
+.case-link:hover { text-decoration: underline; }
+.newsletter-subscribe { display: inline-block; margin-top: 1.75rem; }
+
+#newsletter .case-grid { border-color: var(--border-gold); background: var(--border-gold); }
+#newsletter .case-card:hover { background: #F2F0E8; }
+#newsletter .case-tag { color: var(--gold-dim); }
+#newsletter .case-headline { color: #0E0D0C; }
+#newsletter .case-desc { color: #4A4843; }
+#newsletter .case-link { color: var(--gold-dim); }
+
+#newsletter .case-grid { border: none; background: transparent; gap: 1.25rem; }
+#newsletter .case-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #FAF9F6;
+  color: #1A1916;
+  text-decoration: none;
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+#newsletter .case-card:hover {
+  background: #FAF9F6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  border-color: var(--gold);
+}
+
+#expertise .expertise-grid { border: none; background: transparent; gap: 1.25rem; }
+#expertise .expertise-card {
+  background: #E7E5DF;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+#expertise .expertise-card:hover {
+  background: #DEDCD4;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+#expertise .expertise-num { color: var(--gold-dim); }
+#expertise .expertise-title { color: #1A1916; }
+#expertise .expertise-desc { color: #4A4843; }
 </style>
 </head>
 <body>
@@ -256,6 +303,7 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
   </ul>
@@ -281,6 +329,31 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
     <div class="stat-cell"><div class="stat-num">13+</div><div class="stat-label">Years of experience</div></div>
   </div>
 </div>
+
+<section id="newsletter">
+  <p class="section-eyebrow">AI-Powered GTM &mdash; Newsletter</p>
+  <div class="case-grid">
+    <a href="https://www.linkedin.com/pulse/pareto-abm-how-i-find-20-accounts-hold-80-pipeline-apify-jain--leggc/" target="_blank" class="case-card">
+      <div class="case-tag">Issue 04</div>
+      <div class="case-headline">Pareto ABM: How I Find the 20% of Accounts That Hold 80% of Pipeline</div>
+      <div class="case-desc">A practical breakdown of applying the 80/20 rule to account prioritisation, using Apify and AI workflows to surface the highest-value accounts before spending a single hour on outreach.</div>
+      <span class="case-link">Read on LinkedIn &rarr;</span>
+    </a>
+    <a href="https://www.linkedin.com/pulse/how-set-up-claude-marketer-one-issue-you-cannot-skip-claudes-jain--3vntf/" target="_blank" class="case-card">
+      <div class="case-tag">Issue 03</div>
+      <div class="case-headline">How to Set Up Claude as a Marketer: The One Step You Cannot Skip</div>
+      <div class="case-desc">The setup most marketers miss when bringing Claude into their workflow, and why skipping it quietly limits everything else you try to build on top of it.</div>
+      <span class="case-link">Read on LinkedIn &rarr;</span>
+    </a>
+    <a href="https://www.linkedin.com/pulse/how-i-run-full-competitive-intelligence-brief-every-week-jain--fvdwf/" target="_blank" class="case-card">
+      <div class="case-tag">Issue 02</div>
+      <div class="case-headline">How I Run a Full Competitive Intelligence Brief Every Week</div>
+      <div class="case-desc">The exact workflow behind a weekly competitive intelligence brief, built to run on autopilot so insight shows up in the inbox instead of being chased down manually.</div>
+      <span class="case-link">Read on LinkedIn &rarr;</span>
+    </a>
+  </div>
+  <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7466863288870428672" target="_blank" class="btn-secondary newsletter-subscribe">Subscribe on LinkedIn</a>
+</section>
 
 <section id="expertise">
   <p class="section-eyebrow">What I do</p>
