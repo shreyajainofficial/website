@@ -62,11 +62,18 @@ nav {
 .nav-links a:hover { color: var(--gold); }
 
 /* HERO */
-.hero { padding: 4rem 2.5rem 0; border-bottom: 1px solid var(--border); }
+.hero {
+  padding: 0 2.5rem;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
 .hero-top {
   display: flex; align-items: flex-start;
   justify-content: space-between; gap: 3rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 .hero-left { flex: 1 1 0; min-width: 0; }
 .hero-badge {
@@ -75,23 +82,23 @@ nav {
   padding: 5px 14px; border-radius: 20px;
   background: var(--gold-bg); color: var(--gold);
   border: 1px solid var(--border-gold);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.85rem;
 }
 .hero-main {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.9rem);
-  line-height: 1.1; color: var(--white);
-  margin-bottom: 1rem;
+  line-height: 1.3; color: var(--white);
+  margin-bottom: 1.6rem;
 }
 .hero-main .dot { color: var(--gold); margin: 0 0.15em; }
 .hero-headline {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-  font-weight: 400; line-height: 1.35;
-  color: var(--white); margin-bottom: 0.7rem;
+  font-weight: 400; line-height: 1.55;
+  color: var(--white); margin-bottom: 1.3rem;
 }
 .hero-headline em { font-style: italic; color: var(--gold); }
-.hero-sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 1.75rem; }
+.hero-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-primary {
   font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
@@ -219,7 +226,7 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   nav { padding: 0.9rem 1.25rem; }
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.78rem; }
-  .hero { padding: 2.5rem 1.25rem 0; }
+  .hero { padding: 2.5rem 1.25rem; min-height: auto; }
   .hero-top { flex-direction: column-reverse; gap: 1.5rem; }
   .hero-photo { width: 90px; height: 90px; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
