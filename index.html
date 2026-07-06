@@ -363,6 +363,19 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   transition: background 0.2s;
 }
 .case-listen-btn:hover { background: var(--gold-light); }
+
+.skills-split {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.skills-divider { background: var(--border); align-self: stretch; }
+.skills-group .section-eyebrow { margin-bottom: 1.25rem; }
+@media (max-width: 820px) {
+  .skills-split { grid-template-columns: 1fr; gap: 2rem; }
+  .skills-divider { display: none; }
+}
 </style>
 </head>
 <body>
@@ -466,34 +479,44 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
 </section>
 
 <section class="skills-section">
-  <p class="section-eyebrow">Skills &amp; tools</p>
-  <div class="skills-wrap">
-    <span class="skill-pill">GTM strategy</span>
-    <span class="skill-pill">ABM</span>
-    <span class="skill-pill">B2B</span>
-    <span class="skill-pill">Lead generation</span>
-    <span class="skill-pill">Behavioural GTM</span>
-    <span class="skill-pill">LinkedIn Marketing</span>
-    <span class="skill-pill">Email Marketing</span>
-    <span class="skill-pill">Business Development</span>
-    <span class="skill-pill">Brand Positioning</span>
-    <span class="skill-pill">Market Positioning</span>
-    <span class="skill-pill">Content Marketing</span>
-    <span class="skill-pill">Product Marketing</span>
-    <span class="skill-pill">SEO</span>
-    <span class="skill-pill">AEO</span>
-    <span class="skill-pill">GEO</span>
-    <span class="skill-pill">Claude Cowork</span>
-    <span class="skill-pill">HeyReach</span>
-    <span class="skill-pill">HubSpot</span>
-    <span class="skill-pill">Clay</span>
-    <span class="skill-pill">n8n</span>
-    <span class="skill-pill">Smartlead</span>
-    <span class="skill-pill">LinkedIn Sales Navigator</span>
-    <span class="skill-pill">Semrush</span>
-    <span class="skill-pill">GA4</span>
-    <span class="skill-pill">GSC</span>
-    <span class="skill-pill">WordPress</span>
+  <div class="skills-split">
+    <div class="skills-group">
+      <p class="section-eyebrow">Skills</p>
+      <div class="skills-wrap">
+        <span class="skill-pill">GTM strategy</span>
+        <span class="skill-pill">ABM</span>
+        <span class="skill-pill">B2B</span>
+        <span class="skill-pill">Lead generation</span>
+        <span class="skill-pill">Behavioural GTM</span>
+        <span class="skill-pill">LinkedIn Marketing</span>
+        <span class="skill-pill">Email Marketing</span>
+        <span class="skill-pill">Business Development</span>
+        <span class="skill-pill">Brand Positioning</span>
+        <span class="skill-pill">Market Positioning</span>
+        <span class="skill-pill">Content Marketing</span>
+        <span class="skill-pill">Product Marketing</span>
+        <span class="skill-pill">SEO</span>
+        <span class="skill-pill">AEO</span>
+        <span class="skill-pill">GEO</span>
+      </div>
+    </div>
+    <div class="skills-divider"></div>
+    <div class="skills-group">
+      <p class="section-eyebrow">Tools</p>
+      <div class="skills-wrap">
+        <span class="skill-pill">Claude Cowork</span>
+        <span class="skill-pill">HeyReach</span>
+        <span class="skill-pill">HubSpot</span>
+        <span class="skill-pill">Clay</span>
+        <span class="skill-pill">n8n</span>
+        <span class="skill-pill">Smartlead</span>
+        <span class="skill-pill">LinkedIn Sales Navigator</span>
+        <span class="skill-pill">Semrush</span>
+        <span class="skill-pill">GA4</span>
+        <span class="skill-pill">GSC</span>
+        <span class="skill-pill">WordPress</span>
+      </div>
+    </div>
   </div>
 </section>
 
