@@ -298,6 +298,71 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
 #expertise .expertise-num { color: var(--gold-dim); }
 #expertise .expertise-title { color: #1A1916; }
 #expertise .expertise-desc { color: #4A4843; }
+
+.audio-card {
+  background: #E7E5DF;
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.audio-tag {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-dim);
+  margin-bottom: 0.5rem;
+}
+.audio-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; line-height: 1.25; color: #0E0D0C;
+  margin-bottom: 0.5rem;
+}
+.audio-desc { font-size: 0.92rem; color: #4A4843; line-height: 1.7; }
+.audio-player-wrap {
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0E0D0C;
+}
+
+#listen .audio-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: #E7E5DF;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+}
+.audio-label {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.75rem;
+}
+.audio-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem; line-height: 1.25;
+  color: #1A1916;
+  margin-bottom: 0.75rem;
+}
+.audio-desc { font-size: 0.88rem; color: #4A4843; line-height: 1.7; }
+.audio-player-wrap iframe { border-radius: 8px; display: block; }
+@media (max-width: 820px) {
+  #listen .audio-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+}
+
+#newsletter .case-card div.case-card-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: auto; }
+.case-listen-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; font-weight: 500;
+  padding: 6px 14px; border-radius: 20px;
+  background: var(--gold); color: var(--black);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.case-listen-btn:hover { background: var(--gold-light); }
 </style>
 </head>
 <body>
@@ -363,12 +428,15 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
       <div class="case-desc">A practical breakdown of applying the 80/20 rule to account prioritisation, using Apify and AI workflows to surface the highest-value accounts before spending a single hour on outreach.</div>
       <span class="case-link">Read on LinkedIn &rarr;</span>
     </a>
-    <a href="https://www.linkedin.com/pulse/how-set-up-claude-marketer-one-issue-you-cannot-skip-claudes-jain--3vntf/" target="_blank" class="case-card">
+    <div class="case-card">
       <div class="case-tag">Issue 03</div>
       <div class="case-headline">How to Set Up Claude as a Marketer: The One Step You Cannot Skip</div>
       <div class="case-desc">The setup most marketers miss when bringing Claude into their workflow, and why skipping it quietly limits everything else you try to build on top of it.</div>
-      <span class="case-link">Read on LinkedIn &rarr;</span>
-    </a>
+      <div class="case-card-actions">
+        <a href="https://www.linkedin.com/pulse/how-set-up-claude-marketer-one-issue-you-cannot-skip-claudes-jain--3vntf/" target="_blank" class="case-link">Read on LinkedIn &rarr;</a>
+        <a href="https://drive.google.com/file/d/1Yl70wf7CIHB9uxr_Wie6FlpCsbX8MZZn/view" target="_blank" class="case-listen-btn">&#9654;&nbsp; Listen now</a>
+      </div>
+    </div>
     <a href="https://www.linkedin.com/pulse/how-i-run-full-competitive-intelligence-brief-every-week-jain--fvdwf/" target="_blank" class="case-card">
       <div class="case-tag">Issue 02</div>
       <div class="case-headline">How I Run a Full Competitive Intelligence Brief Every Week</div>
