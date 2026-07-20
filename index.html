@@ -606,7 +606,6 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#featured">Featured In</a></li>
     <li><a href="#workshop" class="nav-link-live">Webinar</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
     <li><a href="#expertise">Expertise</a></li>
@@ -884,6 +883,7 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   // Workshop ends 16 July 2026, 9:00 PM IST (UTC+5:30)
   var WORKSHOP_END = new Date('2026-07-16T21:00:00+05:30');
   var isPast = new Date() > WORKSHOP_END;
+  var RECORDING_URL = 'https://drive.google.com/file/d/1__1W6JAU_qQiSgrIUm9UjLoQK09PEW30/view?usp=drive_link';
 
   var section   = document.getElementById('workshop');
   var eyebrow   = document.getElementById('workshopEyebrow');
@@ -892,9 +892,12 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
   var navLink   = document.querySelector('.nav-link-live');
 
   if (isPast) {
-    // Past state: keep the session visible, drop the urgency cues.
-    if (eyebrow) eyebrow.textContent = 'Past session &middot; 16 July 2026';
+    // Past state: keep the session visible, drop the urgency cues, point to the recording.
+    if (eyebrow) eyebrow.innerHTML = 'Past session &middot; 16 July 2026';
     if (cta) cta.textContent = 'Watch the recording';
+    document.querySelectorAll('[data-workshop-cta]').forEach(function (el) {
+      el.href = RECORDING_URL;
+    });
     if (heroBadge) heroBadge.remove();
     if (navLink) navLink.classList.remove('nav-link-live');
   }
@@ -906,7 +909,7 @@ footer { padding: 1.25rem 2.5rem; text-align: center; font-size: 0.8rem; color: 
         gtag('event', 'cta_click', {
           cta_text: isPast ? 'workshop_recording' : 'workshop_register',
           location: 'workshop_section',
-          destination: 'zoho_webinar'
+          destination: isPast ? 'recording' : 'zoho_webinar'
         });
       }
     });
